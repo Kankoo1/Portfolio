@@ -1,8 +1,8 @@
 # Portfolio
 **This a repository for Portfolio Development**
-**Step One: Clone the remote repo to local repo and create new branch "navbar"**
-    - Work on navbar branch to create your navabr__
-    - Add to the stage__
+**Step One: Clone the remote repo to local repo and create new branch "navbar"**\
+    - Work on navbar branch to create your navabr\
+    - Add to the stage\
     -- commit it with meaningful message__
     --push to remote repo
  **Step Two: create git branch "profile"**__
