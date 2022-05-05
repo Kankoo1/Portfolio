@@ -15,4 +15,9 @@
     - Add to the stage
     -- commit it with meaningful message
     --push to remote repo
+  **Step Three: create git branch "skill"**
+     - Work on skill branch to create your skill
+    - Add to the stage
+    -- commit it with meaningful message
+    --push to remote repo
 
