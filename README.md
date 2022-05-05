@@ -24,5 +24,5 @@
      - Work on Resume branch to create your skill and add custom css to override border on card\
     - Add to the stage\
     -- commit it with meaningful message\
-    --push to remote repo\
+    --push to remote repo
 
