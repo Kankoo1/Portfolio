@@ -6,7 +6,13 @@
     -- commit it with meaningful message
     --push to remote repo
  **Step Two: create git branch "profile"**
-     - Work on profile branch to create your navabr
+     - Work on profile branch to create your profile
     - Add to the stage
     -- commit it with meaningful message
     --push to remote repo
+  **Step Two: create git branch "education"**
+     - Work on profile branch to create your education
+    - Add to the stage
+    -- commit it with meaningful message
+    --push to remote repo
+
