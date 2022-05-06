@@ -1,13 +1,14 @@
-/*function clicked() {
+function clicked() {
     var response = prompt('E.Signature', "Your Full Name");
     if (confirm("Press Confirm!")) {
-        response = alert(`Success Message. Dear ${response} your message is recieved at  ${Date()}. Thank you so much for your time and being in touch!`)
+        response = alert(`Dear ${response}, I am happy that your here at  ${Date()} to give me feedback on my Portfolio. Don't forget to change your screen size to see the website responsiveness!`)
     } else {
-        response = alert(`Dear ${reasponse} Your Submission is not Successfull!`);
+        response = alert(`Dear ${reasponse} I am sorry that your feedback is not Successfull!`);
     }
     document.getElementById("demo").innerHTML = response;
-    } */
-
+    }
+    alert(clicked());
+/*
 function formValidation()
 {
 var fname = document.validation.firstName;
@@ -69,4 +70,4 @@ alert('last Name must have alphabet characters only');
 lname.focus();
 return false;
 }
-}
+}*/
