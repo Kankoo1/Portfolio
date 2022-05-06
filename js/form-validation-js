@@ -1,0 +1,72 @@
+/*function clicked() {
+    var response = prompt('E.Signature', "Your Full Name");
+    if (confirm("Press Confirm!")) {
+        response = alert(`Success Message. Dear ${response} your message is recieved at  ${Date()}. Thank you so much for your time and being in touch!`)
+    } else {
+        response = alert(`Dear ${reasponse} Your Submission is not Successfull!`);
+    }
+    document.getElementById("demo").innerHTML = response;
+    } */
+
+function formValidation()
+{
+var fname = document.validation.firstName;
+var lname = document.validation.lastName;
+var uadd = document.validation.address;
+var ucountry = document.validation.country;
+var uzip = document.validation.zip;
+var uemail = document.validation.email;
+var umsex = document.validation.msex;
+var ufsex = document.validation.fsex; if(userid_validation(uid,5,12))
+{
+if(allLetter(fname))
+{
+if(allLetter(lname))
+{
+if(alphanumeric(uadd))
+{ 
+if(countryselect(ucountry))
+{
+if(allnumeric(uzip))
+{
+if(ValidateEmail(uemail))
+{
+if(validsex(umsex,ufsex))
+{
+}
+} 
+}
+} 
+}
+}
+}
+}
+return false;
+}
+
+function allLetter(fname)   { 
+var firstletters = /^[A-Za-z]+$/;
+if(fname.value.match(firstletters))
+{
+return true;
+}
+else {
+alert('first Name must have alphabet characters only');
+fname.focus();
+return false;
+}
+}
+
+function lLetter(lname)   { 
+var lastletters = /^[A-Za-z]+$/;
+if(lname.value.match(lastletters))
+{
+return true;
+}
+else
+{
+alert('last Name must have alphabet characters only');
+lname.focus();
+return false;
+}
+}
