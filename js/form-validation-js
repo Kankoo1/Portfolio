@@ -1,13 +1,14 @@
-function clicked() {
-    var response = prompt('E.Signature', "Your Full Name");
+function visited() {
+    var response1 = prompt('E.Signature', "Your Full Name");
     if (confirm("Press Confirm!")) {
-        response = alert(`Dear ${response}, I am happy that your here at  ${Date()} to give me feedback on my Portfolio. Don't forget to change your screen size to see the website responsiveness!`)
+        response = alert(`Dear ${response1}, I am happy that your here at  ${Date()} to give me feedback on my Portfolio. Don't forget to change your screen size to see the website responsiveness!`)
     } else {
-        response = alert(`Dear ${reasponse} I am sorry that your feedback is not Successfull!`);
+        response = alert(`Dear ${response1}, I am sorry that your feedback is not Successfull!`);
     }
-    document.getElementById("demo").innerHTML = response;
+    document.getElementById("demo").innerHTML = response1;
     }
-    alert(clicked());
+    alert(visited());
+
 /*
 function formValidation()
 {
