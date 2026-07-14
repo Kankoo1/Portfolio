@@ -29,6 +29,9 @@
   padding: 1rem 1rem 0.75rem;
   background: linear-gradient(135deg, #0f766e, #1d4ed8);
   color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 
   h3 {
     margin: 0;
@@ -40,6 +43,23 @@
     margin: 0.25rem 0 0;
     color: rgba(255, 255, 255, 0.9);
     font-size: 0.85rem;
+  }
+}
+
+.chat-close {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.15rem 0.3rem;
+  cursor: pointer;
+  opacity: 0.85;
+  margin-left: 0.5rem;
+
+  &:hover {
+    opacity: 1;
   }
 }
 
