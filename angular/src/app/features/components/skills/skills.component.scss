@@ -1,0 +1,177 @@
+.skills-container {
+  padding: 3rem 0 0.75rem;
+  background-color: #f8f9fa;
+
+  @media (max-width: 768px) {
+    padding: 1.75rem 0 0.5rem;
+  }
+}
+
+.skills-content {
+  width: 50%;
+  max-width: 760px;
+  margin: 0 auto;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+  color: #2c3e50;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #42def8);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.skill-category {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+  }
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: '';
+    width: 4px;
+    height: 1.3rem;
+    background-color: #42def8;
+    border-radius: 2px;
+  }
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.skill-level {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+
+  &.expert {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  &.intermediate {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  &.beginner {
+    background-color: #d1ecf1;
+    color: #0c5460;
+  }
+}
+
+.progress {
+  height: 0.5rem;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+
+  .progress-bar {
+    height: 100%;
+    transition: width 1s ease-in-out;
+
+    &.expert {
+      background: linear-gradient(90deg, #27ae60, #2ecc71);
+    }
+
+    &.intermediate {
+      background: linear-gradient(90deg, #f39c12, #f1c40f);
+    }
+
+    &.beginner {
+      background: linear-gradient(90deg, #3498db, #42def8);
+    }
+  }
+}
+
+.skill-footer {
+  text-align: right;
+
+  small {
+    font-size: 0.75rem;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border: 0.25rem solid #e0e0e0;
+  border-right-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,39 @@
+<div class="profile-container">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="profile-content">
+          <h1 class="profile-title">
+            {{ profile?.name || 'Nuru Hussein' }}
+          </h1>
+          <p class="profile-subtitle">
+            {{ profile?.title || 'Full Stack Developer | Java | Spring Boot | Web Technologies' }}
+          </p>
+          <p class="profile-description">
+            {{ profile?.bio || 'Passionate about creating elegant solutions to complex problems. Specialized in backend development with modern Java frameworks.' }}
+          </p>
+
+          <div class="profile-actions">
+            <a href="assets/Nuru-Hussein.pdf" download="Nuru-Hussein.pdf" class="btn btn-primary btn-lg">
+              Download Resume
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=husseinnour469@gmail.com" target="_blank" rel="noopener"
+               class="btn btn-outline-light btn-lg">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="profile-image-container">
+          <div class="profile-image-wrapper">
+            <img 
+              src="assets/images/myphoto.png" 
+              [alt]="profile?.name || 'Profile Image'"
+              class="profile-image rounded-circle">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+.education-container {
+  padding: 3rem 0 0.75rem;
+  background-color: white;
+
+  @media (max-width: 768px) {
+    padding: 1.75rem 0 0.5rem;
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+  color: #2c3e50;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #42def8);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.education-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.education-card {
+  border: none;
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease-in-out;
+  background: white;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+    border-left-color: #42def8;
+  }
+}
+
+.card-title {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  color: #3498db;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.card-text {
+  color: #555;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.education-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  .badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border: 0.25rem solid #e0e0e0;
+  border-right-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

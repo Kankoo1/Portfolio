@@ -1,0 +1,96 @@
+name: Deploy to Production
+
+on:
+  release:
+    types: [created, published]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.event.inputs.environment || 'production' }}
+      url: https://${{ secrets.DEPLOY_HOST }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Log in to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: portfolio
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        cd backend
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: Deploy to ECS
+      run: |
+        aws ecs update-service \
+          --cluster portfolio-cluster \
+          --service portfolio-service \
+          --force-new-deployment \
+          --region ${{ secrets.AWS_REGION }}
+
+    - name: Wait for service to stabilize
+      run: |
+        aws ecs wait services-stable \
+          --cluster portfolio-cluster \
+          --services portfolio-service \
+          --region ${{ secrets.AWS_REGION }}
+
+    - name: Verify deployment
+      run: |
+        TASK_ARN=$(aws ecs list-tasks \
+          --cluster portfolio-cluster \
+          --service-name portfolio-service \
+          --query 'taskArns[0]' \
+          --output text \
+          --region ${{ secrets.AWS_REGION }})
+        
+        echo "Task ARN: $TASK_ARN"
+        
+        # Get container IP and test endpoint
+        CONTAINER_IP=$(aws ecs describe-tasks \
+          --cluster portfolio-cluster \
+          --tasks $TASK_ARN \
+          --query 'tasks[0].attachments[0].details[?name==`privateIPv4Address`].value' \
+          --output text \
+          --region ${{ secrets.AWS_REGION }})
+        
+        echo "Container IP: $CONTAINER_IP"
+        
+        # Health check
+        curl -f http://$CONTAINER_IP:8080/api/actuator/health || exit 1
+
+    - name: Send Slack notification
+      if: always()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        text: 'Deployment ${{ job.status }} for Portfolio to ${{ github.event.inputs.environment || 'production' }}'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+        fields: repo,message,commit,author

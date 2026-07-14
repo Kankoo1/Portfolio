@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta name="description" content="Professional Portfolio - Hussein Nour">
+    <title>Portfolio | Hussein Nour</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmABheP7PHHY5rfu8wBmM28xmRYpUqTcR" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usRD7d+N4FQ36aOGaQbLkemlEUvgmqGE4RPSTrHvwqjRtH6KgLCQIfuYo2YW5Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
 <body>
     <!--navigation bar-->
@@ -48,6 +47,133 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="content/message.html">Message me!</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="container mt-5 pt-3">
+      <!-- Profile Section -->
+      <section id="profile" class="my-5 py-5">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="display-4 fw-bold">Hussein Nour</h1>
+            <p class="lead text-muted">Full Stack Developer | Java | Spring Boot | Web Technologies</p>
+            <p>Passionate about creating elegant solutions to complex problems. Specialized in backend development with modern Java frameworks.</p>
+            <div class="mt-4">
+              <a href="#resume" class="btn btn-primary btn-lg">View Resume</a>
+              <a href="content/message.html" class="btn btn-outline-primary btn-lg ms-2">Get in Touch</a>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="images/logo-modified.png" alt="Profile" class="img-fluid rounded-circle" style="max-width: 300px;">
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="my-5 py-5">
+        <h2 class="mb-4">Education</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Degree/Certification</h5>
+                <p class="card-text">Your education details go here</p>
+                <small class="text-muted">Year - Year</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skill" class="my-5 py-5">
+        <h2 class="mb-4">Technical Skills</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fab fa-java"></i> Backend</h5>
+                <ul class="list-unstyled">
+                  <li>Java 21</li>
+                  <li>Spring Boot 3.5+</li>
+                  <li>Spring Security</li>
+                  <li>JPA/Hibernate</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fab fa-html5"></i> Frontend</h5>
+                <ul class="list-unstyled">
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript</li>
+                  <li>Bootstrap 5</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-database"></i> Databases</h5>
+                <ul class="list-unstyled">
+                  <li>MySQL</li>
+                  <li>PostgreSQL</li>
+                  <li>JPA ORM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume" class="my-5 py-5">
+        <h2 class="mb-4">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h5 class="timeline-title">Your Experience Title</h5>
+                <p><small class="text-muted">Year - Year</small></p>
+              </div>
+              <div class="timeline-body">
+                <p>Your experience details here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+      <div class="container">
+        <p>&copy; 2024 Hussein Nour. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100079614612943" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+          <a href="mailto:husseinnour469@gmail.com" class="text-white"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NAJW2hdM1ye+RND4dQwsCPA+R7cP" crossorigin="anonymous"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+</html>
                   <li><a class="dropdown-item" href="#"> Online chat </a></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>

@@ -1,0 +1,263 @@
+.experience-container {
+  padding: 3rem 0 0.75rem;
+  background-color: white;
+
+  @media (max-width: 768px) {
+    padding: 1.75rem 0 0.5rem;
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+  color: #2c3e50;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #42def8);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.timeline {
+  position: relative;
+  padding: 1.25rem 0 0.25rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #3498db, #42def8);
+    transform: translateX(-50%);
+
+    @media (max-width: 768px) {
+      left: 30px;
+    }
+  }
+}
+
+.timeline-item {
+  margin-bottom: 4rem;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+
+    .timeline-panel::after {
+      display: none;
+    }
+  }
+
+  &:nth-child(odd) {
+    @media (min-width: 769px) {
+      .timeline-badge {
+        left: calc(50% - 30px);
+      }
+
+      .timeline-panel {
+        margin-left: auto;
+        margin-right: 50%;
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    @media (min-width: 769px) {
+      .timeline-badge {
+        right: calc(50% - 30px);
+        left: auto;
+      }
+
+      .timeline-panel {
+        margin-left: 50%;
+        margin-right: 0;
+        padding-left: 2rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .timeline-badge {
+      left: 0;
+    }
+
+    .timeline-panel {
+      margin-left: 80px;
+    }
+  }
+}
+
+.timeline-badge {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #3498db, #42def8);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+.timeline-panel {
+  background: white;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    top: 2rem;
+    left: -40px;
+    z-index: 5;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  color: #3498db;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  .location {
+    color: #666;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+}
+
+.date-range {
+  color: #999;
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem 0;
+
+  .badge {
+    margin-left: 0.5rem;
+  }
+}
+
+.card-text {
+  color: #555;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.responsibilities {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-left: 3px solid #42def8;
+
+  strong {
+    color: #2c3e50;
+  }
+
+  ul {
+    margin: 0.5rem 0 0 1.5rem;
+
+    li {
+      color: #555;
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+.skills-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  .badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border: 0.25rem solid #e0e0e0;
+  border-right-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

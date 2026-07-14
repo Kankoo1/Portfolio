@@ -1,0 +1,62 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="row g-4">
+        <!-- About Section -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h5 class="footer-title">Portfolio</h5>
+            <p class="footer-text">
+              Professional portfolio showcasing my skills, experience, and projects. 
+              Built with Angular and Spring Boot for modern web development.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="footer-links">
+              <li *ngFor="let link of quickLinks">
+                <a [routerLink]="link.route">{{ link.label }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h5 class="footer-title">Connect</h5>
+            <div class="social-links">
+              <a 
+                *ngFor="let link of contactLinks"
+                [href]="link.url"
+                [target]="link.target || ''"
+                rel="noopener"
+                class="social-link"
+                [title]="link.label">
+                <fa-icon [icon]="link.icon"></fa-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="footer-divider">
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          <fa-icon [icon]="faCopyright"></fa-icon>
+          {{ currentYear }} Nuru Hussein. All rights reserved.
+        </p>
+        <p class="built-with">
+          Built with <strong>Angular</strong> & <strong>Spring Boot</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

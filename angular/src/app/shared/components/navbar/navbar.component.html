@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" 
+     [class.scrolled]="isScrolled">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <span class="brand-text">Portfolio</span>
+    </a>
+    
+    <button 
+      class="navbar-toggler"
+      [attr.aria-expanded]="isMenuOpen"
+      (click)="toggleMenu()">
+      <fa-icon [icon]="isMenuOpen ? faTimes : faBars"></fa-icon>
+    </button>
+
+    <div class="collapse navbar-collapse" [class.show]="isMenuOpen">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" (click)="closeMenu()">
+            <fa-icon [icon]="faHome"></fa-icon>
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLink="/education"
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <fa-icon [icon]="faGraduationCap"></fa-icon>
+            Education
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLink="/skills"
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <fa-icon [icon]="faCode"></fa-icon>
+            Skills
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLink="/experience"
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <fa-icon [icon]="faBriefcase"></fa-icon>
+            Experience
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=husseinnour469@gmail.com" target="_blank" rel="noopener">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <div class="social-links ms-lg-3">
+        <a href="https://www.linkedin.com/in/nuru-hussein/" target="_blank" rel="noopener" class="social-link">
+          <fa-icon [icon]="faLinkedin"></fa-icon>
+        </a>
+        <a href="https://github.com/Kankoo1" target="_blank" rel="noopener" class="social-link">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+        <a href="https://www.facebook.com/nuru.hussein.964417" target="_blank" rel="noopener" class="social-link">
+          <fa-icon [icon]="faFacebook"></fa-icon>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+          <fa-icon [icon]="faTwitter"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,44 @@
+<div class="skills-container">
+  <div class="container">
+    <div class="skills-content">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div *ngIf="loading" class="loading">
+        <div class="spinner-border"></div>
+      </div>
+
+      <div *ngIf="!loading && skills.length > 0" class="skills-grid">
+        <div *ngFor="let category of categories" class="skill-category">
+          <h5 class="category-title">{{ category }}</h5>
+          <div class="skills-list">
+            <div *ngFor="let skill of getSkillsByCategory(category)" class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-level" [ngClass]="getProficiencyClass(skill.proficiency)">
+                  {{ skill.proficiency }}%
+                </span>
+              </div>
+              <div class="progress">
+                <div 
+                  class="progress-bar"
+                  [ngClass]="getProficiencyClass(skill.proficiency)"
+                  [style.width.%]="skill.proficiency"
+                  role="progressbar">
+                </div>
+              </div>
+              <div class="skill-footer">
+                <small *ngIf="skill.endorsements" class="text-muted">
+                  {{ skill.endorsements }} endorsements
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!loading && skills.length === 0" class="alert alert-info">
+        No skills information available yet.
+      </div>
+    </div>
+  </div>
+</div>

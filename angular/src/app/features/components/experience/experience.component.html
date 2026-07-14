@@ -1,0 +1,47 @@
+<div class="experience-container">
+  <div class="container">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div *ngIf="loading" class="loading">
+      <div class="spinner-border"></div>
+    </div>
+
+    <div *ngIf="!loading && experience.length > 0" class="timeline">
+      <div *ngFor="let exp of experience; let last = last" class="timeline-item" [class.last]="last">
+        <div class="timeline-badge">
+          <span class="badge-icon">{{ exp.title.charAt(0) }}</span>
+        </div>
+        <div class="timeline-panel card">
+          <div class="card-body">
+            <h5 class="card-title">{{ exp.title }}</h5>
+            <h6 class="card-subtitle mb-2">
+              {{ exp.company }}
+              <span *ngIf="exp.location" class="location">📍 {{ exp.location }}</span>
+            </h6>
+            <p class="date-range">
+              {{ formatDate(exp.startDate) }} - 
+              <span *ngIf="exp.endDate">{{ formatDate(exp.endDate) }}</span>
+              <span *ngIf="!exp.endDate" class="badge bg-success">Current</span>
+            </p>
+            <p class="card-text">{{ exp.description }}</p>
+            
+            <div *ngIf="exp.responsibilities && exp.responsibilities.length > 0" class="responsibilities">
+              <strong>Responsibilities:</strong>
+              <ul>
+                <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
+              </ul>
+            </div>
+
+            <div *ngIf="exp.skills && exp.skills.length > 0" class="skills-tags">
+              <span *ngFor="let skill of exp.skills" class="badge bg-info">{{ skill }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && experience.length === 0" class="alert alert-info">
+      No experience information available yet.
+    </div>
+  </div>
+</div>

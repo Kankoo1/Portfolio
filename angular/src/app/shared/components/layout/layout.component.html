@@ -1,0 +1,19 @@
+<div class="layout-container">
+  <app-navbar></app-navbar>
+
+  <main class="main-content" style="padding-top: 80px;">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+
+  <app-chat-widget></app-chat-widget>
+
+  <!-- Scroll to Top Button -->
+  <button 
+    class="btn-scroll-to-top" 
+    (click)="scrollToTop()"
+    [class.show]="true">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>

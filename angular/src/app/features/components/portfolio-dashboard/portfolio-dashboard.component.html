@@ -1,0 +1,23 @@
+<div class="portfolio-dashboard">
+  <main class="main-content">
+    <section id="education">
+      <app-education></app-education>
+    </section>
+
+    <section id="skills">
+      <app-skills></app-skills>
+    </section>
+
+    <section id="experience">
+      <app-experience></app-experience>
+    </section>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button 
+    class="btn-scroll-to-top" 
+    (click)="scrollToTop()"
+    [class.show]="true">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
